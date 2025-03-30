@@ -97,7 +97,7 @@ export const CallToAction = () => {
             ? "opacity-100 translate-y-0" 
             : "opacity-0 translate-y-10"
         )}>
-          {plans.map((plan, index) => (
+          {plans.map((plan) => (
             <div 
               key={plan.name}
               className={cn(
