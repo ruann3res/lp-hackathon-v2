@@ -185,6 +185,7 @@ const UserForm = () => {
                           />
                         </FormControl>
                         <FormMessage />
+                          <p className="text-muted-foreground text-xs">Lembre se: nao precisa colocar o digito 9 no inicio do numero</p>
                       </FormItem>
                     )}
                   />
