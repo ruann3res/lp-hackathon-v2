@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 import { ThemeToggle } from "../ThemeToggle";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,11 +66,14 @@ const Navigation = () => {
                 Entre em contato
               </Button>
             </a>
-            <a href="/user-form">
-              <Button size="lg" variant="uaipy" className="cursor-pointer">
+            
+              <Button size="lg" variant="uaipy" className="cursor-pointer"  asChild
+              >
+                <Link to="/user-form">
                 Cadastre-se
+                </Link>
               </Button>
-            </a>
+            
           </div>
         </div>
 

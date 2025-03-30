@@ -5,18 +5,18 @@ import { z } from 'zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import Logo from "../../assets/uaigro-01.png";
-import { ThemeToggle } from "../ThemeToggle";
-import { userService } from '../../services/api';
+import Logo from "@/assets/uaigro-01.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { userService } from '@/services/api';
 import { PatternFormat } from 'react-number-format';
-import { SuccessModal } from '../Success-Modal';
+import { SuccessModal } from '@/components/Success-Modal';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
 
 const formSchema = z.object({
   plano: z.string().min(1, { message: 'Selecione um plano' }),
@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-export const UserForm = () => {
+const UserForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
@@ -283,3 +283,5 @@ export const UserForm = () => {
     </div>
   );
 };
+
+export default UserForm;
