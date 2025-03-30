@@ -1,6 +1,3 @@
-import AnimatedImage from "../AnimatedImage";
-import Logo from "../../assets/logo.png";
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -9,14 +6,6 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-12 md:gap-8 text-center">
           <div className="flex flex-col items-center">
-            <div className="flex items-center mb-6">
-              <a href="#" className="text-xl font-semibold tracking-tight">
-                <AnimatedImage src={Logo} alt="UAIgro" className="w-20 h-20" />
-              </a>
-            </div>
-            <p className="text-muted-foreground mb-6 max-w-md">
-            UAIgro
-            </p>
             <div className="flex space-x-4 justify-center mb-8">
               <a 
                 href="https://www.instagram.com/projeto_uai.py/" 

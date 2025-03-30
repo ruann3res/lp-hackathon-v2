@@ -1,51 +1,51 @@
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const plans = [
-  {
-    name: "Básico",
-    price: "R$99",
-    description: "Ideal para pequenas empresas",
-    features: [
-      "Acesso a modelos básicos de IA",
-      "Suporte por email",
-      "1 usuário",
-      "5 projetos por mês"
-    ]
-  },
-  {
-    name: "Premium",
-    price: "R$199",
-    description: "Perfeito para empresas em crescimento",
-    features: [
-      "Todos os recursos do plano Básico",
-      "Modelos avançados de IA",
-      "Suporte prioritário",
-      "5 usuários",
-      "Projetos ilimitados"
-    ],
-    popular: true
-  },
-  {
-    name: "Enterprise",
-    price: "Consulte",
-    description: "Para grandes organizações",
-    features: [
-      "Todos os recursos do plano Premium",
-      "Modelos personalizados de IA",
-      "Gerente de conta dedicado",
-      "Usuários ilimitados",
-      "API personalizada"
-    ]
-  }
-];
+    {
+      name: "Free",
+      price: "Gratuito",
+      description: "Ideal para quem quer testar o UAIAGRO.",
+      features: [
+        "✔️ Acesso a relatórios básicos",
+        "✔️ 3 interações por mês com geração de relatório",
+        "✔️ Relatórios avançados",
+        "✔️ Suporte prioritário"
+      ]
+    },
+    {
+      name: "Intermediário",
+      price: "R$ 24,99/mês",
+      description: "Para consultores agronômicos e pequenos produtores.",
+      features: [
+        "✔️ Acesso a relatórios avançados",
+        "✔️ Até 50 interações por mês",
+        "✔️ Suporte via chat e e-mail (tempo de resposta de até 24h)",
+        "✔️ Interações ilimitadas",
+        "✔️ Suporte 24/7 dedicado"
+      ],
+      popular: true
+    },
+    {
+      name: "Corporativo",
+      price: "Sob consulta",
+      description: "Para empresas e agregadores de serviços agronômicos.",
+      features: [
+        "✔️ Relatórios avançados e personalizados",
+        "✔️ Interações ilimitadas por mês",
+        "✔️ Suporte dedicado 24/7 com tempo de resposta imediato",
+        "✔️ Consultoria personalizada e workshops sobre o uso da IA"
+      ]
+    }
+  ];
+  
 
 export const CallToAction = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [whatsappNumber] = useState('+5534992275554');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,13 +64,6 @@ export const CallToAction = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const onSubmit = (planName: string) => {
-    const message = `Olá UAIgro. Gostaria de saber mais sobre o seu produto. eu escolhi o plano ${planName}`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\+/g, '')}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
-  };
 
   return (
     <section 
@@ -122,7 +115,7 @@ export const CallToAction = () => {
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center">
-                    <Check className="w-5 h-5 text-primary mr-2" />
+                  
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -132,9 +125,11 @@ export const CallToAction = () => {
                 className="w-full group" 
                 size="lg" 
                 variant={plan.popular ? "uaipy" : "uaipyTertiary"}
-                onClick={() => onSubmit(plan.name)}
+                asChild
               >
-                Começar agora <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Link to="/user-form">
+                  Começar agora <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
           ))}

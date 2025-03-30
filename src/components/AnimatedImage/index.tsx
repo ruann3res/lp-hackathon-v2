@@ -23,7 +23,7 @@ const AnimatedImage = ({ src, alt, className, priority = false }: AnimatedImageP
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative w-full h-full">
       {/* Placeholder blur */}
       <div
         className={cn(
@@ -38,7 +38,7 @@ const AnimatedImage = ({ src, alt, className, priority = false }: AnimatedImageP
         alt={alt}
         className={cn(
           className,
-          "transition-all duration-300",
+          "transition-all duration-300 w-full h-full object-contain",
           isLoaded ? "opacity-100 blur-0 scale-100" : "opacity-0 blur-lg scale-105"
         )}
         onLoad={handleImageLoad}
@@ -46,6 +46,5 @@ const AnimatedImage = ({ src, alt, className, priority = false }: AnimatedImageP
     </div>
   );
 };
-
 
 export default AnimatedImage;

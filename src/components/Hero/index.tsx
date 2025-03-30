@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import AnimatedImage from "@/components/AnimatedImage";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/uaigro-01.png";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -68,8 +67,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button size="lg" className="group" variant="uaipy">
               <a href="#contact" className="flex items-center">
-                Entre em contato e descubra como a IA pode ajudar seu negócio
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Descubra como a IA pode ajudar seu negócio
               </a>
             </Button>
           </div>
