@@ -5,7 +5,6 @@ import {Methodology} from '@/components/Methodology';
 import {Testimonials} from '@/components/Testimonials';
 import {FAQ} from '@/components/FAQ';
 import {Footer} from '@/components/Footer';
-import { Contact } from '@/components/Contact';
 import {CallToAction} from '@/components/CTA';
 const Index = () => {
   useEffect(() => {
@@ -42,7 +41,6 @@ const Index = () => {
         <Methodology />
         <Testimonials />
         <FAQ />
-        <Contact/>
         <CallToAction/>
       </main>
       <Footer />

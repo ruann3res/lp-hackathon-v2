@@ -61,19 +61,12 @@ const Navigation = () => {
           </a>
           <ThemeToggle />
           <div className="flex gap-3">
-            <a href="#contact">
-              <Button size="lg" variant="uaipySecondary" className="cursor-pointer">
-                Entre em contato
-              </Button>
-            </a>
-            
               <Button size="lg" variant="uaipy" className="cursor-pointer"  asChild
               >
                 <Link to="/user-form">
                 Cadastre-se
                 </Link>
               </Button>
-            
           </div>
         </div>
 

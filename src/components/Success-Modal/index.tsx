@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Logo from "../../assets/uaigro-01.png";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -15,11 +15,10 @@ interface SuccessModalProps {
 }
 
 export const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
-  const navigate = useNavigate();
+  const [whatsappNumber] = useState('+5534992275554');
 
-  const handleRedirect = () => {
-    onClose();
-    navigate('/');
+  const callToWhatsapp = () => {
+    window.open(`https://wa.me/${whatsappNumber}`, '_blank');
   };
 
   return (
@@ -37,8 +36,8 @@ export const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
           </p>
         </div>
         <DialogFooter>
-          <Button onClick={handleRedirect} className="w-full">
-            Voltar para a página inicial
+          <Button onClick={callToWhatsapp} className="w-full">
+            Ir para o WhatsApp
           </Button>
         </DialogFooter>
       </DialogContent>

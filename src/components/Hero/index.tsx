@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import AnimatedImage from "@/components/AnimatedImage";
 import Logo from "../../assets/uaigro-01.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -66,9 +67,9 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button size="lg" className="group" variant="uaipy">
-              <a href="#contact" className="flex items-center">
+            <Link to="/user-form">
                 Descubra como a IA pode ajudar seu negócio
-              </a>
+            </Link>
             </Button>
           </div>
 
