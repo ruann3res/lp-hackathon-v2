@@ -3,39 +3,30 @@ import { Star, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import AnimatedImage from "@/components/AnimatedImage";
-
+import avatar1 from "@/assets/person1.jpg";
+import avatar2 from "@/assets/person2.jpg";
+import avatar3 from "@/assets/person3.jpg";
 
 const testimonials = [
   {
     quote:
       "A UAIgro me ajudou a aumentar a produtividade do meu negócio em 30%.",
-    author: "Julia Lima",
-    avatar:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5,
-  },
-  {
-    quote:
-      "A UAIgro me ajudou a aumentar a produtividade do meu negócio em 30%.",
     author: "Tales Santos",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200",
+    avatar: avatar1,
     rating: 5,
   },
   {
     quote:
-      "A UAIgro me ajudou a aumentar a produtividade do meu negócio em 30%.",
-    author: "Ana Clara",
-    avatar:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200&h=200",
+      "A UAIgro mudou a forma como eu cuido da minha produção! Agora tudo é mais prático.",
+    author: "Julia Lima",
+    avatar: avatar2,
     rating: 5,
   },
   {
     quote:
-      "A UAIgro me ajudou a aumentar a produtividade do meu negócio em 30%.",
-    author: "Danilo Oliveira",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200",
+      "Eu tenho um controle muito melhor do meu plantio e colheita graças a UAIgro.",
+    author: "Lucas Oliveira",
+    avatar: avatar3,
     rating: 5,
   },
 ];
