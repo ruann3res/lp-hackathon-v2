@@ -59,11 +59,18 @@ const Navigation = () => {
             FAQ
           </a>
           <ThemeToggle />
-          <a href="#contact">
-            <Button size="lg" variant="uaipySecondary">
-              Entre em contato
-            </Button>
-          </a>
+          <div className="flex gap-3">
+            <a href="#contact">
+              <Button size="lg" variant="uaipySecondary" className="cursor-pointer">
+                Entre em contato
+              </Button>
+            </a>
+            <a href="/user-form">
+              <Button size="lg" variant="uaipy" className="cursor-pointer">
+                Cadastre-se
+              </Button>
+            </a>
+          </div>
         </div>
 
         <div className="md:hidden">

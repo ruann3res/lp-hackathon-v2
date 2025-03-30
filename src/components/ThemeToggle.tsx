@@ -7,7 +7,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-uaipy-accent dark:bg-uaipy-primary transition-colors"
+      className="p-2 rounded-lg bg-uaipy-accent dark:bg-uaipy-primary transition-colors cursor-pointer"
       aria-label="Alternar tema"
     >
       {theme === 'light' ? (

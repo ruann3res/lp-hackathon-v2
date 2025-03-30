@@ -20,9 +20,9 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        uaipy: "bg-uaipy-primary text-white shadow-xs hover:bg-uaipy-primary/80",
-        uaipySecondary: "bg-uaipy-secondary text-uaipy-primary shadow-xs hover:bg-uaipy-secondary/80",
-        uaipyTertiary: "bg-uaipy-tertiary text-white shadow-xs hover:bg-uaipy-tertiary/80",
+        uaipy: "bg-uaipy-primary text-white shadow-xs hover:bg-uaipy-secondary hover:text-uaipy-primary",
+        uaipySecondary: "bg-uaipy-secondary text-uaipy-primary shadow-xs hover:bg-uaipy-secondary/70",
+        uaipyTertiary: "bg-uaipy-tertiary text-white shadow-xs hover:bg-white hover:border border-uaipy-tertiary hover:text-uaipy-tertiary",
         uaipyAccent: "bg-uaipy-accent text-uaipy-primary shadow-xs hover:bg-uaipy-accent/80",
       },
       size: {

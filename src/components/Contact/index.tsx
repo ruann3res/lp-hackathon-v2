@@ -118,7 +118,7 @@ export const Contact = () => {
               
               <Button 
                 type="submit" 
-                className="w-full flex items-center justify-center gap-2"
+                className="w-full flex items-center justify-center gap-2 cursor-pointer"
                 disabled={isSubmitting}
                 variant="uaipySecondary"
               >
