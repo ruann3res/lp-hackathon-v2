@@ -1,0 +1,145 @@
+import { useRef, useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Check } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+const plans = [
+  {
+    name: "Básico",
+    price: "R$99",
+    description: "Ideal para pequenas empresas",
+    features: [
+      "Acesso a modelos básicos de IA",
+      "Suporte por email",
+      "1 usuário",
+      "5 projetos por mês"
+    ]
+  },
+  {
+    name: "Premium",
+    price: "R$199",
+    description: "Perfeito para empresas em crescimento",
+    features: [
+      "Todos os recursos do plano Básico",
+      "Modelos avançados de IA",
+      "Suporte prioritário",
+      "5 usuários",
+      "Projetos ilimitados"
+    ],
+    popular: true
+  },
+  {
+    name: "Enterprise",
+    price: "Consulte",
+    description: "Para grandes organizações",
+    features: [
+      "Todos os recursos do plano Premium",
+      "Modelos personalizados de IA",
+      "Gerente de conta dedicado",
+      "Usuários ilimitados",
+      "API personalizada"
+    ]
+  }
+];
+
+export const CallToAction = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [whatsappNumber] = useState('+5534992275554');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const onSubmit = (planName: string) => {
+    const message = `Olá UAIgro. Gostaria de saber mais sobre o seu produto. eu escolhi o plano ${planName}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\+/g, '')}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+    <section 
+      id="pricing" 
+      ref={sectionRef}
+      className="py-24 px-6 md:px-12 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Escolha o plano ideal para seu negócio</h2>
+          <p className="text-lg text-muted-foreground">
+            Soluções personalizadas para cada etapa do seu crescimento
+          </p>
+        </div>
+
+        <div className={cn(
+          "grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700",
+          isVisible 
+            ? "opacity-100 translate-y-0" 
+            : "opacity-0 translate-y-10"
+        )}>
+          {plans.map((plan, index) => (
+            <div 
+              key={plan.name}
+              className={cn(
+                "bg-background rounded-xl p-8 border transition-all duration-300 hover:shadow-lg",
+                plan.popular && "border-primary/50 shadow-lg"
+              )}
+            >
+              <div className="text-center mb-6">
+                {plan.popular && (
+                  <div className="inline-block rounded-full px-3 py-1 bg-primary/10 text-primary text-sm font-medium mb-4">
+                    Mais Popular
+                  </div>
+                )}
+                <h3 className="text-2xl font-bold">{plan.name}</h3>
+                <p className="text-muted-foreground mt-2">{plan.description}</p>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">{plan.price}</span>
+                  {plan.price !== "Consulte" && <span className="text-muted-foreground">/mês</span>}
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-8">
+                {plan.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-2" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <Button 
+                className="w-full group" 
+                size="lg" 
+                variant={plan.popular ? "uaipy" : "uaipyTertiary"}
+                onClick={() => onSubmit(plan.name)}
+              >
+                Começar agora <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
