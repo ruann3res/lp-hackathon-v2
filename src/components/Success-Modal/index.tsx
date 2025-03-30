@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Logo from "../../assets/uaigro-01.png";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -16,10 +17,14 @@ interface SuccessModalProps {
 
 export const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
   const [whatsappNumber] = useState('+5534998645554');
-
+  const navigate = useNavigate();
   const callToWhatsapp = () => {
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
+
+      onClose();
+      navigate('/');
   };
+
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
