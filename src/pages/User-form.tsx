@@ -21,7 +21,7 @@ import {
 const formSchema = z.object({
   plano: z.string().min(1, { message: 'Selecione um plano' }),
   nomeProprietario: z.string().min(2, { message: 'Nome deve ter no mínimo 2 caracteres' }),
-  telefone: z.string().min(10, { message: 'Telefone inválido' }),
+  telefone: z.string().min(12, { message: 'Telefone inválido' }),
   endereco: z.string().min(5, { message: 'Endereço inválido' }),
   nomePropriedade: z.string().min(2, { message: 'Nome da propriedade inválido' }),
   areaTotal: z.string().min(1, { message: 'Área total é obrigatória' }),
@@ -176,9 +176,9 @@ const UserForm = () => {
                       <FormItem>
                         <FormControl>
                           <PatternFormat
-                            format="(##) ####-####"
+                            format="#############"
                             mask="_"
-                            placeholder="Telefone"
+                            placeholder="Telefone (ex: 553496671414)"
                             value={field.value}
                             onValueChange={(values) => field.onChange(values.value)}
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
