@@ -15,7 +15,7 @@ interface SuccessModalProps {
 }
 
 export const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
-  const [whatsappNumber] = useState('+5534992275554');
+  const [whatsappNumber] = useState('+5534998645554');
 
   const callToWhatsapp = () => {
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
