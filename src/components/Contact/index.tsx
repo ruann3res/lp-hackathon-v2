@@ -120,7 +120,7 @@ export const Contact = () => {
                 type="submit" 
                 className="w-full flex items-center justify-center gap-2"
                 disabled={isSubmitting}
-                variant="uaipy"
+                variant="uaipySecondary"
               >
                 <Send className="h-4 w-4" />
                  Enviar Mensagem

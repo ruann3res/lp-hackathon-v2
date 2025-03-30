@@ -11,10 +11,10 @@ export function ThemeToggle() {
       aria-label="Alternar tema"
     >
       {theme === 'light' ? (
-        <Moon className="w-5 h-5 text-uaipy-secondary dark:text-uaipy-tertiary" />
+        <Moon className="w-5 h-5 text-white dark:text-white" />
       ) : (
-        <Sun className="w-5 h-5 text-uaipy-secondary dark:text-uaipy-tertiary" />
+        <Sun className="w-5 h-5 text-uaipy-secondary dark:text-uaipy-secondary" />
       )}
     </button>
   )
-} 
+}

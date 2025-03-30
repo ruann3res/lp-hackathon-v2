@@ -92,7 +92,7 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center lg:flex lg:justify-around">
           <div className="lg:col-span-2 order-2 lg:order-1">
             <div
               className={cn(

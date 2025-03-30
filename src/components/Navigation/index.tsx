@@ -60,7 +60,7 @@ const Navigation = () => {
           </a>
           <ThemeToggle />
           <a href="#contact">
-            <Button size="lg" variant="uaipy">
+            <Button size="lg" variant="uaipySecondary">
               Entre em contato
             </Button>
           </a>
