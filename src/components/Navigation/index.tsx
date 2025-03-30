@@ -25,7 +25,7 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
-          <a href="#" className="text-xl font-semibold tracking-tight">
+          <a href="https://github.com/uaipy" target="_blank" className="text-xl font-semibold tracking-tight">
             <span className="text-gradient">
               UAIgro <span className="text-muted-foreground">powered by</span>{" "}
               <span className="text-red-500">

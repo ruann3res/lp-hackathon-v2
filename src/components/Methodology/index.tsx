@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { HandHeart, HandCoins,Bot,ChartSpline, ChartBarDecreasing, Globe } from 'lucide-react';
+import {  HandCoins,Bot,ChartSpline, ChartBarDecreasing, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const features = [
