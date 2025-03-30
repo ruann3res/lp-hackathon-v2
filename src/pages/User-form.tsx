@@ -80,6 +80,12 @@ const UserForm = () => {
       const userData = buildUserData(data);
       await userService.sendUserForm(userData);
       setShowSuccessModal(true);
+      await userService.sendChatMessage({
+        numero: userData.telefone,
+        text: {
+          message: `E aí ${userData.name.trim().split(' ')[0]}, tudo bem? Tô muito feliz e animado pra te ajudar com tudo o que precisar pro seu plantio!\n Sobre o que você gostaria de falar agora?`
+        }
+      });
       form.reset();
     } catch (error) {
       console.error('Erro:', error);
