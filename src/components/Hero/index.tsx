@@ -53,7 +53,7 @@ const Hero = () => {
           style={{ animationDelay: "0.3s" }}
         >
           <div className="space-y-4">
-            <div className="inline-block rounded-full px-4 py-1.5 bg-uaipy-primary border text-sm font-medium animate-fade-in text-uaipy-secondary">
+            <div className="inline-block rounded-full px-4 py-1.5 bg-uaipy-secondary border text-sm font-medium animate-fade-in text-uaipy-primary">
               Tecnologia que cultiva resultados
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -98,7 +98,7 @@ const Hero = () => {
             <AnimatedImage
               src={Logo}
               alt="UAIgro"
-              className="h-80 w-80 object-contain shadow-lg border-2 border-secondary rounded-full mb-12"
+              className="h-40 w-40 object-contain  mb-12"
             />
           </div>
         </div>

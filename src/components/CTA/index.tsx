@@ -94,7 +94,7 @@ export const CallToAction = () => {
             <div 
               key={plan.name}
               className={cn(
-                "bg-background rounded-xl p-8 border transition-all duration-300 hover:shadow-lg",
+                "flex flex-col justify-between bg-background rounded-xl p-8 border transition-all duration-300 hover:shadow-lg",
                 plan.popular && "border-primary/50 shadow-lg"
               )}
             >
