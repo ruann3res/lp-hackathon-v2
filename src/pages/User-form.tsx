@@ -176,7 +176,7 @@ const UserForm = () => {
                       <FormItem>
                         <FormControl>
                           <PatternFormat
-                            format="#############"
+                            format="############"
                             mask="_"
                             placeholder="Telefone (ex: 553496671414)"
                             value={field.value}
