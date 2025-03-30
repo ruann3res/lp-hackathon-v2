@@ -18,8 +18,7 @@ type ContactFormValues = z.infer<typeof formSchema>;
 
 export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [whatsappNumber] = useState('+5534992275554'); // Replace with your WhatsApp number
-
+  const [whatsappNumber] = useState('+5534992275554');
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
