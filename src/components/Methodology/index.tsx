@@ -1,25 +1,33 @@
 import { useRef, useEffect, useState } from 'react';
-import { HandHeart, HandCoins, Shell } from 'lucide-react';
+import { HandHeart, HandCoins,Bot,ChartSpline, ChartBarDecreasing, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-// ia para o agronegocio
 
 const features = [
   {
-    title: "Democratizaçao do conhecimento tecnico",
-    description: "A democratização do conhecimento técnico é um processo que visa tornar o conhecimento técnico mais acessível e compreensível para todos, independentemente de sua formação acadêmica ou experiência profissional.",
-    icon: HandHeart
+    title: "Escalabilidade e Automação",
+    description: "O UAIAGRO pode atender milhares de produtores simultaneamente, sem aumentar custos operacionais. Chatbot inteligente responde dúvidas técnicas 24/7, reduzindo a necessidade de atendimento humano.",
+    icon: Bot
   },
   {
-    title: "Aumento na produtividade",
-    description: "Aumenta a produtividade do seu negócio através de IA",
+    title: "Melhoria na Precisão das Recomendações",
+    description: "O uso de Machine Learning permite que o UAIAGRO aprenda com as interações e melhore continuamente suas respostas. Diagnóstico de doenças via imagem com IA reduz erros humanos e acelera a tomada de decisão.",
+    icon: ChartSpline
+  },
+  {
+    title: "Novas Oportunidades de Monetização",
+    description: "Recomendações personalizadas de insumos podem ser integradas a parceiros comerciais, criando um fluxo de receita via afiliados. A análise inteligente de documentos pode ser um serviço premium para consultorias e empresas agrícolas.",
     icon: HandCoins
   },
   {
-    title: "A",
-    description: "Aumenta a produtividade do seu negócio através de IA",
-    icon: Shell
+    title: "Análise de Dados e Previsão Agronômica",
+    description: "O UAIAGRO pode analisar padrões climáticos e históricos para prever riscos agronômicos, ajudando na tomada de decisão estratégica dos produtores. Criação de um banco de dados agrícola para fornecer insights sobre safras, doenças e uso de insumos.",
+    icon: ChartBarDecreasing
   },
+  {
+    title: "Expansão para Novos Mercados",
+    description: "A IA permite que o UAIAGRO seja adaptado para diferentes regiões e culturas agrícolas, ampliando sua base de usuários. Integração com APIs e outras plataformas agrícolas facilita a adoção do produto por empresas e cooperativas.",
+    icon: Globe
+  }
 ];
 
 const MethodologyCard = ({ feature, index }: { feature: typeof features[0], index: number }) => {
