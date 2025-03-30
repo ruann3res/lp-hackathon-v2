@@ -43,16 +43,14 @@ class ApiService {
 
 export const api = new ApiService(import.meta.env.VITE_API_URL);
 
-export interface ChatResponse {
-  message: string;
-  user: string;
+interface SendMessageType {
+  numero: string;
+  text: TextType;
 }
 
-export interface FileUploadResponse {
-  url: string;
-  filename: string;
-  buffer: string;
-}
+interface TextType {
+  message: string;
+} 
 
 export interface UserRegisterType {
   name: string;
@@ -71,12 +69,8 @@ export interface UserRegisterType {
   }
 }
 
-export const chatService = {
-  sendMessage: (message: string) => api.post<ChatResponse>('/chat', { message }),
-  getMessages: () => api.get<ChatResponse[]>('/chat'),
-};
-
 export const userService = {
-  sendUserForm: (userForm: UserRegisterType) => api.post<UserRegisterType>('/user', userForm)
+  sendUserForm: (userForm: UserRegisterType) => api.post<UserRegisterType>('/user', userForm),
+  sendChatMessage: (messageBody: SendMessageType) => api.post<string>('/enviar', messageBody),
 };
 
