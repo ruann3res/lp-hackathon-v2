@@ -112,11 +112,11 @@ const UserForm = () => {
                       <FormLabel>Plano</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="w-full">
                             <SelectValue placeholder="Selecione o plano" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent>
+                        <SelectContent className="fixed w-[var(--radix-select-trigger-width)] max-h-[300px]">
                           <SelectItem value="free">Plano Free</SelectItem>
                           <SelectItem value="pro">Plano Pro</SelectItem>
                           <SelectItem value="enterprise">Plano Enterprise</SelectItem>
@@ -135,11 +135,11 @@ const UserForm = () => {
                       <FormLabel>Perfil</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="w-full">
                             <SelectValue placeholder="Eu sou" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent>
+                        <SelectContent className="fixed w-[var(--radix-select-trigger-width)] max-h-[300px]">
                           <SelectItem value="agricultor">Agricultor</SelectItem>
                           <SelectItem value="técnico">Técnico</SelectItem>
                         </SelectContent>
